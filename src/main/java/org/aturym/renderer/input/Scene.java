@@ -1,27 +1,20 @@
 package org.aturym.renderer.input;
 
-import org.aturym.renderer.data.Edge;
-import org.aturym.renderer.data.Vertex;
+import org.aturym.renderer.data.Triangle;
 
 public class Scene {
 
-    private final Vertex[] vertices;
-    private final Edge[] edges;
+    private final Triangle[] triangles;
 
     private final double focalLength;
 
-    public Scene(Vertex[] vertices, Edge[] edges, double focalLength) {
-        this.vertices = vertices;
-        this.edges = edges;
+    public Scene(Triangle[] triangles, double focalLength) {
+        this.triangles = triangles;
         this.focalLength = focalLength;
     }
 
-    public Vertex[] getVertices() {
-        return vertices;
-    }
-
-    public Edge[] getEdges() {
-        return edges;
+    public Triangle[] getTriangles() {
+        return triangles;
     }
 
     public double getFocalLength() {

@@ -1,15 +1,15 @@
 package org.aturym.renderer
 
-import org.aturym.renderer.data.Edge
+import org.aturym.renderer.data.Triangle
 import org.aturym.renderer.data.Vertex
 import org.aturym.renderer.input.Scene
 
-data class EdgePrototype(val startIndex: Int, val endIndex: Int)
+data class TrianglePrototype(val a: Int, val b: Int, val c: Int)
 
 class SceneBuilder {
 
     private val vertices = arrayListOf<Vertex>()
-    private val edges = arrayListOf<EdgePrototype>()
+    private val triangles = arrayListOf<TrianglePrototype>()
     private var focalLength = 1.0
 
     fun addVertex(vertex: Vertex): SceneBuilder {
@@ -17,7 +17,7 @@ class SceneBuilder {
         return this
     }
 
-    fun addVertex(x: Int, y: Int, z: Int): SceneBuilder {
+    fun addVertex(x: Double, y: Double, z: Double): SceneBuilder {
         vertices.add(Vertex(x, y, z))
         return this
     }
@@ -27,13 +27,13 @@ class SceneBuilder {
         return this
     }
 
-    fun addEdge(from: Int, to: Int): SceneBuilder {
-        edges.add(EdgePrototype(from, to))
+    fun addTriangle(a: Int, b: Int, c: Int): SceneBuilder {
+        triangles.add(TrianglePrototype(a, b, c))
         return this
     }
 
-    fun addEdges(vararg edges: EdgePrototype): SceneBuilder {
-        edges.forEach { addEdge(it.startIndex, it.endIndex) }
+    fun addTriangles(vararg triangles: TrianglePrototype): SceneBuilder {
+        triangles.forEach { addTriangle(it.a, it.b, it.c) }
         return this
     }
 
@@ -43,9 +43,13 @@ class SceneBuilder {
     }
 
     fun build(): Scene = Scene(
-        vertices.toTypedArray(),
-        edges.map { prototype -> Edge(vertices.get(prototype.startIndex), vertices.get(prototype.endIndex)) }
-            .toTypedArray(),
+        triangles.map { prototype ->
+            Triangle(
+                vertices.get(prototype.a),
+                vertices.get(prototype.b),
+                vertices.get(prototype.c)
+            )
+        }.toTypedArray(),
         focalLength
     )
 

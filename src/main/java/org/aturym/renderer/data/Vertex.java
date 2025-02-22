@@ -2,18 +2,17 @@ package org.aturym.renderer.data;
 
 public class Vertex {
 
-    private int x;
-    private int y;
-    private int z;
+    private double x;
+    private double y;
+    private double z;
 
-    public Vertex(int x, int y, int z) {
+    public Vertex(double x, double y, double z) {
         setPosition(x, Axis.X);
         setPosition(y, Axis.Y);
         setPosition(z, Axis.Z);
     }
 
-    //axis: 0 = x-axis, 1 = y-axis, 2 = z-axis
-    public void setPosition(int position, Axis axis) {
+    public void setPosition(double position, Axis axis) {
         switch (axis) {
             case X -> this.x = position;
             case Y -> this.y = position;
@@ -21,15 +20,15 @@ public class Vertex {
         }
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
     }
 
-    public int getZ() {
+    public double getZ() {
         return z;
     }
 }
