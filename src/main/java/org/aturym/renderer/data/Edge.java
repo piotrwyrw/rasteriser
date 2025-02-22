@@ -1,29 +1,20 @@
 package org.aturym.renderer.data;
 
-import org.aturym.renderer.input.InputTable;
-import org.aturym.renderer.renderer.VertexProjection;
-
 public class Edge {
 
-    VertexProjection vpStart;
-    VertexProjection vpDestination;
+    private Vertex start;
+    private Vertex destination;
 
-
-    public Edge(int startIndex, int destionationIndex) {
-        Vertex start = InputTable.getVertexAt(startIndex);
-        Vertex destination = InputTable.getVertexAt(destionationIndex);
-
-        vpStart = new VertexProjection(InputTable.getFocalLength(), start);
-        vpDestination = new VertexProjection(InputTable.getFocalLength(), destination);
-        vpStart.computeProjectedVertex();
-        vpDestination.computeProjectedVertex();
+    public Edge(Vertex start, Vertex destination) {
+        this.start = start;
+        this.destination = destination;
     }
 
-    public VertexProjection getVpStart() {
-        return vpStart;
+    public Vertex getStart() {
+        return start;
     }
 
-    public VertexProjection getVpDestination() {
-        return vpDestination;
+    public Vertex getDestination() {
+        return destination;
     }
 }

@@ -20,21 +20,21 @@ public class VertexProjection {
     }
 
     public void computeXProjected() {
-        int x = vertex.getXPosition();
-        int y = vertex.getYPosition();
-        int z = vertex.getZPosition();
+        int x = vertex.getX();
+        int y = vertex.getY();
+        int z = vertex.getZ();
         this.xProjected = (int) Math.round((focalLength * x) / (focalLength + z));
     }
 
     public void computeYProjected() {
-        int x = vertex.getXPosition();
-        int y = vertex.getYPosition();
-        int z = vertex.getZPosition();
+        int x = vertex.getX();
+        int y = vertex.getY();
+        int z = vertex.getZ();
         this.yProjected = (int) Math.round((focalLength * y) / (focalLength + z));
     }
 
     public void setFocalLength(double focalLength) {
-        if(focalLength < 0) return;
+        if (focalLength < 0) return;
         this.focalLength = focalLength;
     }
 
