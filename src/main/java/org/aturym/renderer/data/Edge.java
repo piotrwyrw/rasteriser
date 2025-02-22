@@ -1,7 +1,7 @@
-package data;
+package org.aturym.renderer.data;
 
-import input.InputTable;
-import renderer.VertexProjection;
+import org.aturym.renderer.input.InputTable;
+import org.aturym.renderer.renderer.VertexProjection;
 
 public class Edge {
 

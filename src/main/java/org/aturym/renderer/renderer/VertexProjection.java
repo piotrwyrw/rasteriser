@@ -1,6 +1,6 @@
-package renderer;
+package org.aturym.renderer.renderer;
 
-import data.Vertex;
+import org.aturym.renderer.data.Vertex;
 
 public class VertexProjection {
 

@@ -1,4 +1,4 @@
-package data;
+package org.aturym.renderer.data;
 
 public class Vertex {
 

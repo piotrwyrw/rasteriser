@@ -1,8 +1,8 @@
-package ui;
+package org.aturym.renderer.ui;
 
-import data.Edge;
-import input.InputTable;
-import renderer.VertexProjection;
+import org.aturym.renderer.data.Edge;
+import org.aturym.renderer.input.InputTable;
+import org.aturym.renderer.renderer.VertexProjection;
 
 import javax.swing.*;
 import java.awt.*;

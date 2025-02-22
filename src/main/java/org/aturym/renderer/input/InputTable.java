@@ -1,7 +1,7 @@
-package input;
+package org.aturym.renderer.input;
 
-import data.Edge;
-import data.Vertex;
+import org.aturym.renderer.data.Edge;
+import org.aturym.renderer.data.Vertex;
 
 public class InputTable {
 
